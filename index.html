@@ -13,7 +13,6 @@
       color: #222;
       background: #f9fafb;
     }
-
     header {
       background: #1e3a8a;
       color: #fff;
@@ -22,19 +21,9 @@
     }
     header h1 { margin: 0; font-size: 1.8rem; }
     nav { margin-top: 10px; }
-    nav a {
-      color: #cbd5e1;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
-    }
+    nav a { color: #cbd5e1; margin: 0 10px; text-decoration: none; font-weight: 500; }
     nav a:hover { color: #fff; }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+    main { max-width: 900px; margin: auto; padding: 20px; }
     section { margin-bottom: 40px; }
     h2 { color: #1e3a8a; margin-bottom: 10px; }
     ul { padding-left: 20px; }
@@ -77,8 +66,6 @@
       animation: fadeIn 1s forwards;
     }
     details summary:hover { background-color: #c7d2fe; }
-
-    /* Arrow icon */
     details summary::before {
       content: "▶";
       position: absolute;
@@ -89,9 +76,7 @@
       font-size: 0.9em;
       color: #1e3a8a;
     }
-    details[open] summary::before {
-      transform: translateY(-50%) rotate(90deg);
-    }
+    details[open] summary::before { transform: translateY(-50%) rotate(90deg); }
 
     /* Pricing table */
     table.pricing-table {
@@ -109,10 +94,7 @@
       padding: 15px;
       text-align: center;
     }
-    table.pricing-table th {
-      background: #1e3a8a;
-      color: #fff;
-    }
+    table.pricing-table th { background: #1e3a8a; color: #fff; }
     table.pricing-table td strong { color: #1e3a8a; font-size: 1.2rem; }
 
     footer {
@@ -127,21 +109,13 @@
     @media(max-width: 600px) {
       .profile-container { flex-direction: column; align-items: center; }
       .profile-container img { margin-bottom: 10px; }
-      table.pricing-table, table.pricing-table th, table.pricing-table td {
-        display: block;
-        width: 100%;
-      }
+      table.pricing-table, table.pricing-table th, table.pricing-table td { display: block; width: 100%; }
       table.pricing-table th { text-align: left; }
       table.pricing-table td { text-align: left; }
     }
 
     /* Fade-in animation */
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -160,27 +134,20 @@
     <!-- About Us Section -->
     <section id="about">
       <h2>About Us</h2>
-
       <div class="profile-container" style="animation-delay: 0.2s;">
         <img src="gaurav.png" alt="Gaurav Gupta">
         <div class="bio">
           <p><strong>Gaurav Gupta</strong>: Director of Education in the School of Computing at Macquarie University. 
-             He holds a Master of Computing from the National University of Singapore (2004) and a PhD in Information Security from Macquarie University (2008). 
-             With 20 years of experience teaching Mathematics and Computer Science at the university level in Australia, Gaurav strongly believes in the importance of strong fundamentals and first principles for long-term success and enjoyment of the subject.
-          </p>
+             Master of Computing (NUS 2004), PhD in Information Security (Macquarie 2008). 20 years teaching Mathematics & Computer Science at university level.</p>
         </div>
       </div>
-
       <div class="profile-container" style="animation-delay: 0.4s;">
         <img src="gunjan.png" alt="Gunjan Chamania">
         <div class="bio">
-          <p><strong>Gunjan Chamania</strong>: Lecturer at Macquarie University. 
-             She holds a Master of Computing from the National University of Singapore (2004) and worked as a Salesforce Administrator for 10 years before making a career change into tertiary teaching in 2020. 
-             Gunjan has consistently received exemplary teaching evaluations and was honoured with the Vice-Chancellor’s Teaching Excellence Award at Macquarie University in 2024.
-          </p>
+          <p><strong>Gunjan Chamania</strong>: Lecturer at Macquarie University. Master of Computing (NUS 2004), former Salesforce Administrator for 10 years, transitioned to tertiary teaching in 2020, Vice-Chancellor’s Teaching Excellence Award 2024.</p>
         </div>
       </div>
-      <p>At <strong>G2 Tutoring</strong>, we provide mathematics and computer programming tutoring for students in Years 5–10. Our goal is to get children excited about the subject matter, with academic success seen as a happy by-product.</p>
+      <p>At <strong>G2 Tutoring</strong>, we provide mathematics, computer programming, and computer literacy tutoring for Years 5–10, aiming to excite students about learning while academic success follows naturally.</p>
     </section>
 
     <!-- Subjects Section -->
@@ -192,7 +159,7 @@
         <ul>
           <li>Number
             <ul>
-              <li>Numeracy skills (fractions, decimals, percentages, integers)</li>
+              <li>Numeracy (fractions, decimals, percentages, integers)</li>
               <li>Arithmetic operations</li>
             </ul>
           </li>
@@ -200,7 +167,7 @@
             <ul>
               <li>Patterns and expressions</li>
               <li>Linear equations and graphs</li>
-              <li>Introduction to quadratic equations (Years 9–10)</li>
+              <li>Quadratic equations (Years 9–10)</li>
             </ul>
           </li>
           <li>Measurement
@@ -220,15 +187,15 @@
           </li>
           <li>Statistics
             <ul>
-              <li>Data displays and interpretation</li>
-              <li>Measures of central tendency (mean, median, mode, range)</li>
+              <li>Data displays & interpretation</li>
+              <li>Measures of central tendency</li>
               <li>Scatterplots and correlation</li>
             </ul>
           </li>
           <li>Probability
             <ul>
               <li>Chance experiments</li>
-              <li>Independent and dependent events</li>
+              <li>Independent & dependent events</li>
               <li>Theoretical vs experimental probability</li>
             </ul>
           </li>
@@ -238,10 +205,34 @@
       <details style="animation-delay: 0.8s;">
         <summary><strong>Computer Programming</strong></summary>
         <ul>
-          <li><strong>Python</strong>: Variables, conditions, loops, functions, lists, dictionaries; classes introduced in upper years.</li>
-          <li><strong>Java</strong>: Variables, operators, loops, arrays, ArrayLists, basic object-oriented programming.</li>
-          <li><strong>Processing (visual coding)</strong>: Animation and visual programming; suitable for Years 5–7.</li>
-          <li><strong>HTML + CSS</strong>: Basic web development; creating simple webpages.</li>
+          <li><strong>Python</strong>: Variables, conditions, loops, functions, lists, dictionaries, classes</li>
+          <li><strong>Java</strong>: Variables, operators, loops, arrays, ArrayLists, basic OOP</li>
+          <li><strong>Processing</strong>: Animation & visual coding, Years 5–7</li>
+          <li><strong>HTML + CSS</strong>: Basic web development</li>
+        </ul>
+      </details>
+
+      <details style="animation-delay: 1s;">
+        <summary><strong>Computer Literacy</strong></summary>
+        <ul>
+          <li>Microsoft Office Suite
+            <ul>
+              <li>Word</li>
+              <li>PowerPoint</li>
+              <li>Excel</li>
+              <li>Access</li>
+              <li>Forms</li>
+            </ul>
+          </li>
+          <li>Google Suite
+            <ul>
+              <li>Sheets</li>
+              <li>Docs</li>
+              <li>Slides</li>
+              <li>Forms</li>
+            </ul>
+          </li>
+          <li>Markdown</li>
         </ul>
       </details>
     </section>
@@ -250,7 +241,7 @@
     <section id="pricing">
       <h2>Pricing</h2>
       <p>Flexible options for individuals and small groups:</p>
-      <table class="pricing-table" style="animation-delay: 1s;">
+      <table class="pricing-table" style="animation-delay: 1.2s;">
         <tr>
           <th>One-on-One</th>
           <th>Group of 2</th>
@@ -270,9 +261,10 @@
       </table>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Us</h2>
-      <p>Interested in enrolling or learning more? Get in touch with us:</p>
+      <p>Interested in enrolling or learning more? Get in touch:</p>
       <ul>
         <li>Email: <a href="mailto:gaurav1780@gmail.com">gaurav1780@gmail.com</a></li>
         <li>Phone: 0466 285 920</li>
@@ -282,7 +274,7 @@
   </main>
 
   <footer>
-    <p>© <span id="year"></span> G2 Tutoring · Maths & Programming Coaching for Years 5–10</p>
+    <p>© <span id="year"></span> G2 Tutoring · Maths, Programming & Computer Literacy for Years 5–10</p>
   </footer>
 
   <script>
