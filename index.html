@@ -41,21 +41,44 @@
     section { margin-bottom: 40px; }
     h2 { color: #1e3a8a; margin-bottom: 10px; }
     ul { padding-left: 20px; }
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    /* About section */
+    .about-container {
+      display: flex;
+      align-items: flex-start;
       gap: 20px;
+      flex-wrap: wrap;
     }
-    .price-card {
+    .about-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Pricing table */
+    table.pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
       background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-    .price-card h3 { margin-top: 0; color: #111827; }
-    .price-card strong { font-size: 1.5rem; display: block; margin: 10px 0; color: #1e3a8a; }
+    table.pricing-table th, table.pricing-table td {
+      border: 1px solid #e5e7eb;
+      padding: 15px;
+      text-align: center;
+    }
+    table.pricing-table th {
+      background: #1e3a8a;
+      color: #fff;
+    }
+    table.pricing-table td strong {
+      color: #1e3a8a;
+      font-size: 1.2rem;
+    }
+
     footer {
       background: #1e293b;
       color: #cbd5e1;
@@ -79,12 +102,12 @@
 
   <main>
     <section id="about">
-    <h2>About Us</h2>
+      <h2>About Us</h2>
       <div class="about-container">
-      <img src="smallProfilePhoto.png" alt="Profile photo of Gaurav Gupta">
+        <img src="smallProfilePhoto.png" alt="Profile photo of Gaurav Gupta">
         <div>
-        <p>I am <strong>Gaurav Gupta</strong>, Director of Education in the School of Computing at Macquarie University. I hold a Master of Computing degree from the National University of Singapore (2004) and a PhD in Information Security from Macquarie University (2008). With 20 years of experience teaching Mathematics and Computer Science at the university level in Australia, I strongly believe in the importance of strong fundamentals and first principles for long-term success and genuine enjoyment of the subject.</p>
-        <p>At <strong>G2 Tutoring</strong>, we provide personalised tutoring for students in Years 5–10 of the Australian education system. Our focus is on building confidence and strong foundations in <em>Mathematics</em> and <em>Computer Programming</em>. We believe in interactive, engaging sessions that make learning fun and practical.</p>
+          <p>I am <strong>Gaurav Gupta</strong>, Director of Education in the School of Computing at Macquarie University. I hold a Master of Computing degree from the National University of Singapore (2004) and a PhD in Information Security from Macquarie University (2008). With 20 years of experience teaching Mathematics and Computer Science at the university level in Australia, I strongly believe in the importance of strong fundamentals and first principles for long-term success and genuine enjoyment of the subject.</p>
+          <p>At <strong>G2 Tutoring</strong>, we provide personalised tutoring for students in Years 5–10 of the Australian education system. Our focus is on building confidence and strong foundations in <em>Mathematics</em> and <em>Computer Programming</em>. We believe in interactive, engaging sessions that make learning fun and practical.</p>
         </div>
       </div>
     </section>
@@ -108,28 +131,24 @@
     <section id="pricing">
       <h2>Pricing</h2>
       <p>Flexible options for individuals and small groups:</p>
-      <div class="pricing">
-        <div class="price-card">
-          <h3>One-on-One</h3>
-          <strong>$100 / hr</strong>
-          <p>Personalised coaching tailored to your child’s needs.</p>
-        </div>
-        <div class="price-card">
-          <h3>Group of 2</h3>
-          <strong>$75 / hr p.p.</strong>
-          <p>Collaborative learning with a friend or classmate.</p>
-        </div>
-        <div class="price-card">
-          <h3>Group of 3</h3>
-          <strong>$65 / hr p.p.</strong>
-          <p>Small group sessions with interactive problem-solving.</p>
-        </div>
-        <div class="price-card">
-          <h3>Group of 4</h3>
-          <strong>$55 / hr p.p.</strong>
-          <p>Affordable group learning with focused guidance.</p>
-        </div>
-      </div>
+      <table class="pricing-table">
+        <tr>
+          <th>One-on-One</th>
+          <th>Group of 2</th>
+        </tr>
+        <tr>
+          <td><strong>$100 / hr</strong><br>Personalised coaching tailored to your child’s needs.</td>
+          <td><strong>$75 / hr p.p.</strong><br>Collaborative learning with a friend or classmate.</td>
+        </tr>
+        <tr>
+          <th>Group of 3</th>
+          <th>Group of 4</th>
+        </tr>
+        <tr>
+          <td><strong>$65 / hr p.p.</strong><br>Small group sessions with interactive problem-solving.</td>
+          <td><strong>$55 / hr p.p.</strong><br>Affordable group learning with focused guidance.</td>
+        </tr>
+      </table>
     </section>
 
     <section id="contact">
