@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G2 Tutoring — Maths & Computer Programming for Years 5–10</title>
+  <title>G2 Tutoring — Maths & Programming for Years 5–10</title>
   <style>
     body {
       font-family: system-ui, Arial, sans-serif;
@@ -45,6 +45,9 @@
       gap: 20px;
       margin-bottom: 25px;
       align-items: flex-start;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
     }
     .profile-container img {
       width: 150px;
@@ -56,7 +59,7 @@
     }
     .profile-container .bio { flex: 1; }
 
-    /* Collapsible details styling */
+    /* Collapsible details styling with arrow */
     details summary {
       cursor: pointer;
       font-size: 1.1em;
@@ -67,8 +70,28 @@
       background-color: #e0e7ff;
       color: #1e3a8a;
       list-style: none;
+      position: relative;
+      padding-left: 25px; /* space for arrow */
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1s forwards;
     }
     details summary:hover { background-color: #c7d2fe; }
+
+    /* Arrow icon */
+    details summary::before {
+      content: "▶";
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.2s ease;
+      font-size: 0.9em;
+      color: #1e3a8a;
+    }
+    details[open] summary::before {
+      transform: translateY(-50%) rotate(90deg);
+    }
 
     /* Pricing table */
     table.pricing-table {
@@ -77,6 +100,9 @@
       margin-top: 15px;
       background: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1s forwards;
     }
     table.pricing-table th, table.pricing-table td {
       border: 1px solid #e5e7eb;
@@ -108,6 +134,14 @@
       table.pricing-table th { text-align: left; }
       table.pricing-table td { text-align: left; }
     }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -127,7 +161,7 @@
     <section id="about">
       <h2>About Us</h2>
 
-      <div class="profile-container">
+      <div class="profile-container" style="animation-delay: 0.2s;">
         <img src="gaurav.png" alt="Gaurav Gupta">
         <div class="bio">
           <p><strong>Gaurav Gupta</strong>: Director of Education in the School of Computing at Macquarie University. 
@@ -137,7 +171,7 @@
         </div>
       </div>
 
-      <div class="profile-container">
+      <div class="profile-container" style="animation-delay: 0.4s;">
         <img src="gunjan.png" alt="Gunjan Chamania">
         <div class="bio">
           <p><strong>Gunjan Chamania</strong>: Lecturer at Macquarie University. 
@@ -154,7 +188,7 @@
     <section id="subjects">
       <h2>Subjects We Cover</h2>
 
-      <details>
+      <details style="animation-delay: 0.6s;">
         <summary><strong>Mathematics</strong></summary>
         <ul>
           <li>Number
@@ -202,7 +236,7 @@
         </ul>
       </details>
 
-      <details>
+      <details style="animation-delay: 0.8s;">
         <summary><strong>Computer Programming</strong></summary>
         <ul>
           <li><strong>Python</strong>: Variables, conditions, loops, functions, lists, dictionaries; classes introduced in upper years.</li>
@@ -217,7 +251,7 @@
     <section id="pricing">
       <h2>Pricing</h2>
       <p>Flexible options for individuals and small groups:</p>
-      <table class="pricing-table">
+      <table class="pricing-table" style="animation-delay: 1s;">
         <tr>
           <th>One-on-One</th>
           <th>Group of 2</th>
@@ -237,7 +271,6 @@
       </table>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Us</h2>
       <p>Interested in enrolling or learning more? Get in touch with us:</p>
