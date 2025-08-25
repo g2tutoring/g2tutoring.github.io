@@ -3,282 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G2 Tutoring — Maths, Computer Programming, and Computer Literacy for Years 5–10</title>
+  <title>G2 Tutoring</title>
   <style>
     body {
-      font-family: system-ui, Arial, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      color: #222;
       background: #f9fafb;
+      color: #333;
     }
+
     header {
       background: #1e3a8a;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
-    header h1 { margin: 0; font-size: 1.8rem; }
-    nav { margin-top: 10px; }
-    nav a { color: #cbd5e1; margin: 0 10px; text-decoration: none; font-weight: 500; }
-    nav a:hover { color: #fff; }
-    main { max-width: 900px; margin: auto; padding: 20px; }
-    section { margin-bottom: 40px; }
-    h2 { color: #1e3a8a; margin-bottom: 10px; }
-    ul { padding-left: 20px; }
+
+    header h1 {
+      margin: 0;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
 
     /* Profile section */
-    .profile-container {
+    .profile {
       display: flex;
-      gap: 20px;
-      margin-bottom: 25px;
       align-items: flex-start;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s forwards;
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      gap: 20px;
     }
-    .profile-container img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex-shrink: 0;
-    }
-    .profile-container .bio { flex: 1; }
 
-    /* Collapsible details styling with arrow */
-    details summary {
-      cursor: pointer;
-      font-size: 1.1em;
-      margin-bottom: 5px;
-      padding: 8px 12px;
-      border: 1px solid #1e3a8a;
-      border-radius: 8px;
-      background-color: #e0e7ff;
-      color: #1e3a8a;
-      list-style: none;
-      position: relative;
-      padding-left: 25px; /* space for arrow */
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 1s forwards;
+    .profile img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
     }
-    details summary:hover { background-color: #c7d2fe; }
+
+    .profile-text {
+      flex: 1;
+    }
+
+    /* Pricing cards */
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .pricing-card {
+      flex: 1 1 calc(50% - 20px);
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
+      border: 1px solid #e5e7eb;
+    }
+
+    .pricing-card h3 {
+      margin-top: 0;
+      color: #1e3a8a;
+    }
+
+    .pricing-card p strong {
+      font-size: 1.2rem;
+      color: #1e3a8a;
+    }
+
+    /* Mobile-friendly cards */
+    @media(max-width: 600px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      .pricing-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Collapsible subjects */
+    details {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+
+    details summary {
+      font-weight: bold;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
     details summary::before {
       content: "▶";
-      position: absolute;
-      left: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: transform 0.2s ease;
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.3s ease;
       font-size: 0.9em;
       color: #1e3a8a;
     }
-    details[open] summary::before { transform: translateY(-50%) rotate(90deg); }
 
-    /* Pricing table */
-    table.pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 1s forwards;
+    details[open] summary::before {
+      transform: rotate(90deg);
     }
-    table.pricing-table th, table.pricing-table td {
-      border: 1px solid #e5e7eb;
-      padding: 15px;
-      text-align: center;
+
+    ul {
+      margin: 10px 0 0 20px;
     }
-    table.pricing-table th { background: #1e3a8a; color: #fff; }
-    table.pricing-table td strong { color: #1e3a8a; font-size: 1.2rem; }
 
     footer {
-      background: #1e293b;
-      color: #cbd5e1;
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      background: #1e3a8a;
+      color: #fff;
+      margin-top: 40px;
     }
-
-    /* Responsive tweaks */
-    @media(max-width: 600px) {
-      .profile-container { flex-direction: column; align-items: center; }
-      .profile-container img { margin-bottom: 10px; }
-      table.pricing-table, table.pricing-table th, table.pricing-table td { display: block; width: 100%; }
-      table.pricing-table th { text-align: left; }
-      table.pricing-table td { text-align: left; }
-    }
-
-    /* Fade-in animation */
-    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
   <header>
     <h1>G2 Tutoring</h1>
-    <p>Years 5–10 tutoring for Maths, Computer Programming, and Computer Literacy</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Mathematics & Computer Programming Tutoring for Years 5–10</p>
   </header>
 
-  <main>
-    <!-- About Us Section -->
-    <section id="about">
-      <h2>About Us</h2>
-      <div class="profile-container" style="animation-delay: 0.2s;">
-        <img src="gaurav.png" alt="Gaurav Gupta">
-        <div class="bio">
-          <p><strong>Gaurav Gupta</strong>: Director of Education in the School of Computing at Macquarie University. 
-             Master of Computing (NUS 2004), PhD in Information Security (Macquarie 2008). 20 years teaching Mathematics & Computer Science at university level.</p>
-        </div>
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="profile">
+      <img src="gaurav.png" alt="Gaurav Gupta">
+      <div class="profile-text">
+        <p>
+          I am <strong>Gaurav Gupta</strong>, Director of Education in the School of Computing at Macquarie University. 
+          I hold a Master of Computing from the National University of Singapore (2004) and a PhD in Information Security from Macquarie University (2008). 
+          With 20 years of experience teaching Mathematics and Computer Science at the university level in Australia, I strongly believe in the importance of strong fundamentals and first principles for long-term success and enjoyment of the subject.
+        </p>
       </div>
-      <div class="profile-container" style="animation-delay: 0.4s;">
-        <img src="gunjan.png" alt="Gunjan Chamania">
-        <div class="bio">
-          <p><strong>Gunjan Chamania</strong>: Lecturer at Macquarie University. Master of Computing (NUS 2004), former Salesforce Administrator for 10 years, transitioned to tertiary teaching in 2020, Vice-Chancellor’s Teaching Excellence Award 2024.</p>
-        </div>
+    </div>
+
+    <div class="profile">
+      <img src="gunjan.png" alt="Gunjan Chamania">
+      <div class="profile-text">
+        <p>
+          I am <strong>Gunjan Chamania</strong>, Lecturer at Macquarie University. 
+          I hold a Master of Computing from the National University of Singapore (2004). 
+          I worked as a Salesforce administrator for 10 years before a career change into tertiary teaching in 2020. 
+          I have received exemplary teaching evaluations and was honoured with the Vice Chancellor’s Teaching Excellence Award at Macquarie University in 2024.
+        </p>
       </div>
-      <p>At <strong>G2 Tutoring</strong>, we provide mathematics, computer programming, and computer literacy tutoring for Years 5–10, aiming to excite students about learning while academic success follows naturally.</p>
-    </section>
+    </div>
+  </section>
 
-    <!-- Subjects Section -->
-    <section id="subjects">
-      <h2>Subjects Covered</h2>
-
-      <details style="animation-delay: 0.6s;">
-        <summary><strong>Mathematics</strong></summary>
-        <ul>
-          <li>Number
-            <ul>
-              <li>Numeracy (fractions, decimals, percentages, integers)</li>
-              <li>Arithmetic operations</li>
-            </ul>
-          </li>
-          <li>Algebra
-            <ul>
-              <li>Patterns and expressions</li>
-              <li>Linear equations and graphs</li>
-              <li>Quadratic equations (Years 9–10)</li>
-            </ul>
-          </li>
-          <li>Measurement
-            <ul>
-              <li>Length, area, volume</li>
-              <li>Units and conversions</li>
-              <li>Time and rates</li>
-            </ul>
-          </li>
-          <li>Space (Geometry)
-            <ul>
-              <li>Shapes and angles</li>
-              <li>Congruence and similarity</li>
-              <li>Pythagoras’ theorem</li>
-              <li>Trigonometry (basic right-angled)</li>
-            </ul>
-          </li>
-          <li>Statistics
-            <ul>
-              <li>Data displays & interpretation</li>
-              <li>Measures of central tendency</li>
-              <li>Scatterplots and correlation</li>
-            </ul>
-          </li>
-          <li>Probability
-            <ul>
-              <li>Chance experiments</li>
-              <li>Independent & dependent events</li>
-              <li>Theoretical vs experimental probability</li>
-            </ul>
-          </li>
-        </ul>
-      </details>
-
-      <details style="animation-delay: 0.8s;">
-        <summary><strong>Computer Programming</strong></summary>
-        <ul>
-          <li><strong>Python</strong>: Variables, conditions, loops, functions, lists, dictionaries, classes</li>
-          <li><strong>Java</strong>: Variables, operators, loops, arrays, ArrayLists, basic OOP</li>
-          <li><strong>Processing</strong>: Animation & visual coding, Years 5–7</li>
-          <li><strong>HTML + CSS</strong>: Basic web development</li>
-        </ul>
-      </details>
-
-      <details style="animation-delay: 1s;">
-        <summary><strong>Computer Literacy</strong></summary>
-        <ul>
-          <li>Microsoft Office Suite
-            <ul>
-              <li>Word</li>
-              <li>PowerPoint</li>
-              <li>Excel</li>
-              <li>Access</li>
-              <li>Forms</li>
-            </ul>
-          </li>
-          <li>Google Suite
-            <ul>
-              <li>Sheets</li>
-              <li>Docs</li>
-              <li>Slides</li>
-              <li>Forms</li>
-            </ul>
-          </li>
-          <li>Markdown</li>
-        </ul>
-      </details>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing">
-      <h2>Pricing</h2>
-      <p>Flexible options for individuals and small groups:</p>
-      <table class="pricing-table" style="animation-delay: 1.2s;">
-        <tr>
-          <th>One-on-One</th>
-          <th>Group of 2</th>
-        </tr>
-        <tr>
-          <td><strong>$100/hr</strong><br>Personalised coaching tailored to your child’s needs.</td>
-          <td><strong>$75/hr p.p.</strong><br>Collaborative learning with a friend or classmate.</td>
-        </tr>
-        <tr>
-          <th>Group of 3</th>
-          <th>Group of 4</th>
-        </tr>
-        <tr>
-          <td><strong>$65/hr p.p.</strong><br>Small group sessions with interactive problem-solving.</td>
-          <td><strong>$55/hr p.p.</strong><br>Affordable group learning with focused guidance.</td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Interested in enrolling or learning more? Get in touch:</p>
+  <section id="subjects">
+    <h2>Subjects We Teach</h2>
+    <details>
+      <summary>Mathematics</summary>
       <ul>
-        <li>Email: <a href="mailto:gaurav1780@gmail.com">gaurav1780@gmail.com</a></li>
-        <li>Phone: 0466 285 920</li>
-        <li>Location: South Turramurra, Australia (online sessions available nationwide)</li>
+        <li>Numeracy</li>
+        <li>Arithmetic</li>
+        <li>Algebra (including linear algebra basics)</li>
+        <li>Geometry</li>
+        <li>Trigonometry</li>
+        <li>Probability & Statistics</li>
+        <li>Introductory Calculus (Year 10 extension)</li>
       </ul>
-    </section>
-  </main>
+    </details>
+    <details>
+      <summary>Computer Programming</summary>
+      <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Processing</li>
+        <li>C</li>
+        <li>C++</li>
+      </ul>
+    </details>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <p>Flexible options for individuals and small groups:</p>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>One-on-One</h3>
+        <p><strong>$100/hr</strong></p>
+        <p>Personalised coaching tailored to your child’s needs.</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Group of 2</h3>
+        <p><strong>$75/hr p.p.</strong></p>
+        <p>Collaborative learning with a friend or classmate.</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Group of 3</h3>
+        <p><strong>$65/hr p.p.</strong></p>
+        <p>Small group sessions with interactive problem-solving.</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Group of 4</h3>
+        <p><strong>$55/hr p.p.</strong></p>
+        <p>Affordable group learning with focused guidance.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>© <span id="year"></span> G2 Tutoring · Maths, Programming & Computer Literacy for Years 5–10</p>
+    <p>&copy; 2025 G2 Tutoring. All rights reserved.</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
