@@ -266,12 +266,28 @@
     <p><strong>Location:</strong> South Turramurra, NSW (Online option for nationwide)</p>
   </div>
 
-  <div class="qr-code">
-    <p>Scan or tap the QR code:</p>
-    <a href="mailto:gaurav1780@gmail.com">
-      <img src="g2tutoringQRCode.png" alt="G2 Tutoring QR Code">
-    </a>
+<div class="share-button">
+    <button id="shareBtn">📤 Share</button>
   </div>
 </section>
+
+<script>
+  document.getElementById("shareBtn").addEventListener("click", async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "G2 Tutoring",
+          text: "Math & Computer Programming Tutoring for Years 5–10 (Australia).",
+          url: window.location.href // current site URL
+        });
+        console.log("Shared successfully");
+      } catch (err) {
+        console.log("Share canceled", err);
+      }
+    } else {
+      alert("Sharing is not supported on this browser.");
+    }
+  });
+</script>
 </body>
 </html>
