@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>G2 Tutoring</title>
   <style>
     body {
@@ -11,7 +11,7 @@
       padding: 0;
       line-height: 1.6;
       background: #f9fafb;
-      color: #333;
+      color: #111827;
     }
 
     header {
@@ -23,40 +23,36 @@
 
     header h1 {
       margin: 0;
+      font-size: 2rem;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
       color: #1e3a8a;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    /* Profile section */
+    /* Profile styling */
     .profile {
       display: flex;
       align-items: flex-start;
       margin-bottom: 30px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       gap: 20px;
     }
 
     .profile img {
-      width: 140px;
-      height: 140px;
+      max-width: 120px;
       border-radius: 50%;
-      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .profile-text {
-      flex: 1;
+    .profile p {
+      margin: 0;
     }
 
     /* Pricing cards */
@@ -87,10 +83,11 @@
       color: #1e3a8a;
     }
 
-    /* Mobile-friendly cards */
+    /* Mobile-friendly: stack cards */
     @media(max-width: 600px) {
       .profile {
         flex-direction: column;
+        align-items: center;
         text-align: center;
       }
       .pricing-card {
@@ -98,142 +95,116 @@
       }
     }
 
-    /* Collapsible subjects */
+    /* Collapsible list */
     details {
+      margin-bottom: 15px;
       background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      margin-bottom: 10px;
       padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
       cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    details summary {
+    summary {
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
-      list-style: none;
-    }
-
-    details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details summary::before {
-      content: "▶";
-      display: inline-block;
-      margin-right: 8px;
-      transition: transform 0.3s ease;
-      font-size: 0.9em;
       color: #1e3a8a;
     }
 
-    details[open] summary::before {
+    summary::marker {
+      display: none;
+    }
+
+    .dropdown-icon {
+      margin-left: auto;
+      transition: transform 0.3s ease;
+    }
+
+    details[open] .dropdown-icon {
       transform: rotate(90deg);
     }
 
     ul {
       margin: 10px 0 0 20px;
     }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1e3a8a;
-      color: #fff;
-      margin-top: 40px;
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>G2 Tutoring</h1>
-    <p>Mathematics & Computer Programming Tutoring for Years 5–10</p>
+    <p>Math & Computer Programming Tutoring for Years 5–10 (Australia)</p>
   </header>
 
   <section id="about">
     <h2>About Us</h2>
     <div class="profile">
       <img src="gaurav.png" alt="Gaurav Gupta">
-      <div class="profile-text">
-        <p>
-          I am <strong>Gaurav Gupta</strong>, Director of Education in the School of Computing at Macquarie University. 
-          I hold a Master of Computing from the National University of Singapore (2004) and a PhD in Information Security from Macquarie University (2008). 
-          With 20 years of experience teaching Mathematics and Computer Science at the university level in Australia, I strongly believe in the importance of strong fundamentals and first principles for long-term success and enjoyment of the subject.
-        </p>
-      </div>
+      <p>
+        I am <strong>Gaurav Gupta</strong>, Director of Education in the School of Computing at Macquarie University. 
+        I hold a Master of Computing from the National University of Singapore (2004) and a PhD in Information Security from Macquarie University (2008). 
+        With 20 years of experience teaching Mathematics and Computer Science at the university level in Australia, I strongly believe in the importance of strong fundamentals and first principles for long-term success and enjoyment of the subject.
+      </p>
     </div>
-
     <div class="profile">
       <img src="gunjan.png" alt="Gunjan Chamania">
-      <div class="profile-text">
-        <p>
-          I am <strong>Gunjan Chamania</strong>, Lecturer at Macquarie University. 
-          I hold a Master of Computing from the National University of Singapore (2004). 
-          I worked as a Salesforce administrator for 10 years before a career change into tertiary teaching in 2020. 
-          I have received exemplary teaching evaluations and was honoured with the Vice Chancellor’s Teaching Excellence Award at Macquarie University in 2024.
-        </p>
-      </div>
+      <p>
+        I am <strong>Gunjan Chamania</strong>, Lecturer at Macquarie University. 
+        I hold a Master of Computing from the National University of Singapore (2004). 
+        I worked as a Salesforce administrator for 10 years, and transitioned into tertiary teaching in 2020. 
+        I have received exemplary teaching evaluations and was awarded the Vice-Chancellor’s Teaching Excellence Award at Macquarie University in 2024.
+      </p>
     </div>
   </section>
 
   <section id="subjects">
     <h2>Subjects We Teach</h2>
     <details>
-      <summary>Mathematics</summary>
+      <summary>Mathematics <span class="dropdown-icon">▶</span></summary>
       <ul>
         <li>Numeracy</li>
         <li>Arithmetic</li>
-        <li>Algebra (including linear algebra basics)</li>
+        <li>Algebra (including linear algebra)</li>
         <li>Geometry</li>
         <li>Trigonometry</li>
         <li>Probability & Statistics</li>
-        <li>Introductory Calculus (Year 10 extension)</li>
+        <li>Calculus (introductory)</li>
       </ul>
     </details>
     <details>
-      <summary>Computer Programming</summary>
+      <summary>Computer Programming <span class="dropdown-icon">▶</span></summary>
       <ul>
         <li>Python</li>
         <li>Java</li>
-        <li>Processing</li>
         <li>C</li>
         <li>C++</li>
+        <li>Processing (Java-based graphics & animation)</li>
       </ul>
     </details>
   </section>
 
   <section id="pricing">
     <h2>Pricing</h2>
-    <p>Flexible options for individuals and small groups:</p>
     <div class="pricing-container">
       <div class="pricing-card">
         <h3>One-on-One</h3>
         <p><strong>$100/hr</strong></p>
-        <p>Personalised coaching tailored to your child’s needs.</p>
       </div>
       <div class="pricing-card">
         <h3>Group of 2</h3>
         <p><strong>$75/hr p.p.</strong></p>
-        <p>Collaborative learning with a friend or classmate.</p>
       </div>
       <div class="pricing-card">
         <h3>Group of 3</h3>
         <p><strong>$65/hr p.p.</strong></p>
-        <p>Small group sessions with interactive problem-solving.</p>
       </div>
       <div class="pricing-card">
         <h3>Group of 4</h3>
         <p><strong>$55/hr p.p.</strong></p>
-        <p>Affordable group learning with focused guidance.</p>
       </div>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 G2 Tutoring. All rights reserved.</p>
-  </footer>
 </body>
 </html>
